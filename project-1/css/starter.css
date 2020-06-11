@@ -1,0 +1,815 @@
+/* Starter CSS */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background: #FCF6ED;
+}   
+
+/* this is making the images all the same size */
+ img {
+    width: 100%;
+    /* taking this out to see if it fixes problem with safari & chrome */
+    /* height: 100%; */
+    object-fit: cover;
+}
+
+h1 {
+    font-family: ivymode, sans-serif;
+    font-style: italic;
+    font-weight: 60;
+    font-size: 3rem;
+}
+
+h3 {
+    font-family: ivymode;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5rem;
+    margin: 0;
+    color: #646B5B;
+}
+
+h5 {
+    font-family: cronos-pro, sans-serif;
+    font-style: italic;
+    font-size: 1em;
+    font-weight: 100;
+    color:#646B5B; 
+}
+
+p {
+    font-family: cronos-pro, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    color: #525252; 
+}
+
+/* start of nav */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(252, 246, 237, .7);
+  /* getting rid of this to make the nav move well */
+  /* position: absolute; */
+  width: 100%;
+  z-index: 1000;
+}
+  
+/* get rid of bullets on list and make text uppercase */
+.main-nav {
+  list-style: none;
+  text-transform: uppercase;
+  
+  /* make main nav flex and make it vertical */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 100;
+}
+  
+/* get rid of underline on links */
+.main-nav a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 1em;
+  color:#525252;
+  letter-spacing: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+  
+.main-nav a:hover {
+  background:#EF8457;
+}
+  
+.main-nav li:last-of-type a {
+  border-bottom: none;
+}
+
+.dropdown > a:after {
+  content: "+"; /*carot */
+  padding: 1px;
+}
+
+nav ul ul {
+  display: none;
+  list-style: none;
+}
+
+nav ul li:hover > ul {
+  display: block;
+  color: #fff;
+}
+
+.submenu {
+}
+/* end of nav */
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 150px;
+}
+
+.center:hover{
+  opacity: 0.8;
+}
+
+.hero {
+  background: url("hero_image.jpg") center;
+  background-size: cover;
+  padding: 5rem;
+}
+
+.hero-plant {
+  background: url("plant-cover-cropped.jpg") center;
+  background-size: cover;
+  padding: 11rem 2rem;
+  height: 55vh;
+}
+
+.book-heading {
+  grid-column: 1/2;
+  grid-row: 3/4; 
+  color: white;
+  font-size: 3.5rem;
+  text-align: left;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.book-heading > p {
+  color:#646B5B;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-top: .25em;
+  letter-spacing: 1px;
+}
+   
+/* Grid styles */
+  
+.hero {
+  /* flex-direction: column; */
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-hero {
+  grid-column: 2/4;
+}
+
+.inner-hero > h1 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+      
+.hero-plant > h1 {
+  color:#646B5B;
+  font-size: 3.5rem;
+  text-align: left;
+  letter-spacing: 2px;
+  margin-left: 50px;
+}
+
+.hero-plant > p {
+  color:#646B5B;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-top: .25em;
+  letter-spacing: 1px;
+  margin-left: 50px;
+}
+
+.subhead {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: .25em;
+  letter-spacing: 1px;
+}
+
+/* icons */
+  .icon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .icon-title {
+    color: white;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    letter-spacing: 1px;
+  }
+
+  .icon-title p, a {
+    text-decoration: none;
+  }
+
+  .icon-title a:hover {
+    color:#EF8457;
+  }
+/* end icons */
+
+.thoughts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.thoughts p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  grid-column: 2/5;
+  line-height: 1.8em;
+} 
+
+.green-box {
+  background: rgba(100, 107, 91);
+  background-size: cover;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.green-box > h1 {
+    color: white;
+}
+
+/* flexbox cards for plants page*/
+
+  img {
+    display: block;
+    max-width: 100%; /*makes image responsive if needed but makes sure it doesn't stretch*/
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  
+  /* make the card flex */
+  /* flex direction vertical */
+  .card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 350px;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    margin: 10px;
+  }
+
+  .card:hover {
+    transition: all 0.2s ease-in;
+    top: -10px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardphoto img { 
+    height: 250px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .cardarticle {
+    padding: 2.5rem;
+    flex-grow: 1;
+  }
+  
+  /* typography */
+  .card H1 {
+    font-family: ivymode;
+    font-style: normal;
+    font-size: 1.5rem;
+    margin: 0;
+    color: #646B5B;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #525252;
+  }
+/* end flexbox cards for plants page*/
+  
+/* recipes webpage with grid */
+  .columns {
+    display: grid;
+    grid-gap: 2em;
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+
+  article {
+    background: white;
+    padding: 1rem;
+  }
+/* end recipes webpage with grid */
+
+.text-two{
+  margin-top: 3rem;
+}
+
+
+/* start recipe button hover effect */
+.box {
+  margin: 20px;
+  border: solid 1.5px;
+  padding: 5px;
+  margin: 15px 0px 2px 0px;
+  border-color: #525252;
+  border-width: 2px;
+  width: 105px;
+  transition: all 0.1s ease;
+  font-family: cronos;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: #525252;
+  text-decoration: none;
+  letter-spacing: .5px;
+}
+
+.box a{
+  text-decoration: none;
+  color: #525252;
+}
+
+
+.hvr-sweep-to-left {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #EF8457;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-left:hover,
+.hvr-sweep-to-left:focus,
+.hvr-sweep-to-left:active {
+  color: white;
+  border-color: #EF8457;
+}
+.hvr-sweep-to-left:hover:before,
+.hvr-sweep-to-left:focus:before,
+.hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/* end recipe button hover effect */
+
+/* grid for books page */
+  .books {
+      display: grid;
+      grid-gap: 1em;
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+
+  .box-left {
+    background-color: rgba(127, 163, 128, 0.7);
+    grid-column: 1/4;
+    grid-row: 2/5;
+  }
+/* end grid for books page */
+
+/* simple grid for records page */
+  .records-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .records-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
+  }
+
+  .records-grid {
+    grid-auto-flow: dense;
+  }
+/* end simple grid for records page */
+
+/* start of parallax */
+.headerbox {
+  height: 40vh;
+  position: relative;
+  background-image: url(pork_poblano_tacos.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  margin-bottom: 4em;
+}
+
+.headerbox-record {
+  height: 40vh;
+  position: relative;
+  background-image: url(steve_turntable.JPG);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  margin-bottom: 4em;
+}
+
+.title {
+  height: 300px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+}
+
+.title h1 {
+  color: #FCF6ED;
+  font-size: 10vw;
+}
+
+.transparent {
+  height: 10em;
+  width: 100%;
+  position: ;
+  position: absolute;
+  top: 75%;
+  margin-top: 5em;
+}
+
+.transparent h2 {
+  font-size: 12vw;
+  text-align: end;
+  padding-right: 30px;
+  color: maroon;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 90ch;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.content article {
+  padding-top: 50px;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+/* end of parallax */
+
+.wrapper{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-footer{
+  flex-shrink: 0;
+  background-color: #646B5B;
+  align-content: center;
+  min-height: 40px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.page-footer p{
+  color: #FCF6ED;
+  padding: 10px;
+}
+
+.page-body{
+  flex-grow: 1;
+}
+
+/* start media quieries */
+  @media only screen and (min-width: 35em) {
+      
+    body {
+      /* background-color: purple; */
+      background-color: #FCF6ED;
+    }
+    
+    /* start nav media quiery 35em */
+      .main-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        }
+
+      /* remove borders on top and bottom */
+      .main-nav a {
+        border-top: none;
+        border-bottom: none;
+      }
+
+      nav ul ul {
+        display: none;
+        position: absolute;
+      }
+          
+      nav ul li:hover > ul {
+        padding-left: 0;
+        background:#FCF6ED;
+      }
+          
+      .sub-menu li {
+        display: flex;
+      }
+
+      /* I put this here to cover the entire link */
+      .sub-menu li:hover{
+        background:#EF8457;
+      }
+    /* end nav media quiery 35em */
+
+    .icon {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .icon img{
+      width: 75%;
+      height: 71%;
+    }
+
+    .hero {
+      height: 70vh;
+    }
+    .inner-hero {
+      margin-top: 3rem;
+    }
+
+    .box-left{
+      background-color: rgba(127, 163, 128, 0.7);
+      width: 100%;
+    }
+  }
+      
+  /* desktop styles */  
+    @media only screen and (min-width: 60em) {
+        
+      body {
+        background-color: rgba(252, 246, 237);
+        /* background-color: rgba(0, 0, 237); */
+        justify-content: center;
+        }
+      
+      /* move list to right side of browser */
+      .main-nav {
+        justify-content: flex-end;
+      }
+  
+      .main-nav a {
+        padding: 20px;
+      }
+
+      .books {
+        display: grid;
+        /* background:orangered; */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 100px 100px 100px 100px;
+      }
+        
+      .box-right{
+        /* background-color: yellow; */
+        grid-column: 2/5;
+        grid-row: 2/5;
+      }
+
+      .box-left{
+        background-color: rgba(127, 163, 128, 0.7);
+        grid-column: 1/4;
+        grid-row: 3/6;
+      }
+    }  
+
+    @media (min-width: 800px) {
+      
+      .columns {
+        /* background: blue; */
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .image.one {
+      }
+      .text.one {
+      }
+      .image.two {
+        grid-column: 2 / 2;
+        grid-row: 2;
+      }
+      .text.two {
+      }
+      .image.three {
+      }
+      .text.three {
+      }
+      .image.four {
+        grid-column: 2 / 2;
+        grid-row: 4;
+      }
+      .text.four {
+      }
+      .image.five {
+      }
+      .text.five {
+      }
+      .image.six {
+        grid-column: 2 / 2;
+        grid-row: 6;
+      }
+      .text.six {
+      }
+      .image.seven {
+      }
+      .text.seven {
+      }
+      .image.eight {
+        grid-column: 2 / 2;
+        grid-row: 8;
+      }
+      .text.eight {
+      }
+      .image.nine {
+      }
+      .text.nine {
+      }
+      .image.ten {
+        grid-column: 2 / 2;
+        grid-row: 10;
+      }
+      .text.ten {
+      }
+      .image.eleven {
+      }
+      .text.eleven {
+      }
+          
+    /* records grid */
+      .tall {
+        grid-row: span 2 / auto;
+      }
+  
+      .wide {
+        grid-column: span 2 / auto;
+      }
+    /* end records grid */
+  }
+          
+  @media (min-width: 1200px) {
+    .columns {
+      /* background: red; */
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .image.one {
+        }
+    .text.one {
+      grid-column: 1 /2;
+      grid-row: 2;
+    }
+    .image.two {
+      grid-column: 2 / 3;
+      grid-row: 1;
+    }
+    .text.two {
+      grid-column: 2 / 3;
+      grid-row: 2;
+    }
+    .image.three {
+      grid-column: 3 / 3;
+      grid-row: 1;
+    }
+    .text.three {
+      grid-column: 3 /3;
+      grid-row: 2;
+    }
+    .image.four {
+      grid-column: 1 /2;
+      grid-row: 3;
+    }
+    .text.four {
+      grid-column: 1 /2;
+      grid-row: 4;
+    }
+    .image.five {
+      grid-column: 2 / 3;
+      grid-row: 3;
+    }
+    .text.five {
+      grid-column: 2 / 3;
+      grid-row: 4;
+    }
+    .image.six {
+      grid-column: 3 / 3;
+      grid-row: 3;
+    }
+    .text.six {
+      grid-column: 3 /3;
+      grid-row: 4;
+    }
+    .image.seven {
+      grid-column: 1 /2;
+      grid-row: 5;
+    }
+    .text.seven {
+      grid-column: 1 /2;
+      grid-row: 6;
+    }
+    .image.eight {
+      grid-column: 2 / 3;
+      grid-row: 5;
+    }
+    .text.eight {
+      grid-column: 2 / 3;
+      grid-row: 6;
+    }
+    .image.nine {
+      grid-column: 3 / 3;
+      grid-row: 5;
+    }
+    .text.nine {
+      grid-column: 3 /3;
+      grid-row: 6;
+    }
+    .image.ten {
+      grid-column: 1 /2;
+      grid-row: 7;
+    }
+    .text.ten {
+      grid-column: 1 /2;
+      grid-row: 8;
+    }
+    .image.eleven {
+      grid-column: 2 / 3;
+      grid-row: 7;
+    }
+    .text.eleven {
+      grid-column: 2 / 3;
+      grid-row: 8;
+    }
+  }
+/* end media quieries */
